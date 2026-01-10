@@ -9,7 +9,7 @@ class JobPosting(BaseModel):
     company: Optional[str]
     tag: Optional[str]
     url: HttpUrl
-    location: Optional[str]
+    # location: Optional[str]
     published_at: Optional[datetime]
     skills: List[str] = []
 

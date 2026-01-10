@@ -13,7 +13,7 @@ class RSSFeeds(JobSource):
         for item in feed.entries:
             if item.get("tags", "N/A")[0]['term'] not in ["Writing", "Sales / Business", "Marketing", "All others", "Education"]:
                 skills = skills_finder(item.get("summary", ""))
-                
+
                 if ":" in item.title:
                     company_name, job_title = item.title.split(":", 1)
                     company_name = company_name.strip()
@@ -27,9 +27,9 @@ class RSSFeeds(JobSource):
                         source=feed.feed.title,
                         title=job_title,
                         company=company_name,
-                        tag = item.get("tags", "N/A")[0]['term'],
+                        tag=item.get("tags", "N/A")[0]['term'],
                         url=item.link,
-                        location=item.get("location", "N/A"),
+                        # location=item.get("location", "N/A"),
                         published_at=parser.parse(item.get("published", "N/A")),
                         skills=skills
                     )
