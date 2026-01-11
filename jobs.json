@@ -1,55 +1,17 @@
 [
   {
     "source": "We Work Remotely: Remote jobs in design, programming, marketing and more",
-    "title": "Applied AI Engineer",
-    "company": "Growth Factory Ventures",
+    "title": "Sr. Software Engineer II",
+    "company": "KFC",
     "tag": "Full-Stack Programming",
-    "url": "https://weworkremotely.com/remote-jobs/growth-factory-ventures-applied-ai-engineer",
-    "published_at": "2025-11-27 15:51:27+00:00",
+    "url": "https://weworkremotely.com/remote-jobs/kfc-sr-software-engineer-ii",
+    "published_at": "2025-12-29 19:01:59+00:00",
     "skills": [
+      "authorization",
+      "aws",
+      "gitlab",
       "https",
-      "hugging face",
-      "langchain",
-      "microservices",
-      "prompt engineering",
-      "python",
-      "pytorch",
-      "rag",
-      "tensorflow",
-      "vector databases"
-    ]
-  },
-  {
-    "source": "We Work Remotely: Remote jobs in design, programming, marketing and more",
-    "title": "Product Engineer - Data Modeling",
-    "company": "PostHog",
-    "tag": "Full-Stack Programming",
-    "url": "https://weworkremotely.com/remote-jobs/posthog-product-engineer-data-modeling",
-    "published_at": "2025-11-26 00:14:40+00:00",
-    "skills": [
-      "data warehouse",
-      "dbt",
-      "docker",
-      "git",
-      "go",
-      "https",
-      "kubernetes",
-      "python",
-      "sql"
-    ]
-  },
-  {
-    "source": "We Work Remotely: Remote jobs in design, programming, marketing and more",
-    "title": "AI Product Engineer",
-    "company": "PostHog",
-    "tag": "Full-Stack Programming",
-    "url": "https://weworkremotely.com/remote-jobs/posthog-ai-product-engineer",
-    "published_at": "2025-11-26 00:02:22+00:00",
-    "skills": [
-      "django",
-      "https",
-      "python",
-      "typescript"
+      "react native"
     ]
   },
   {
@@ -95,75 +57,107 @@
   },
   {
     "source": "We Work Remotely: Remote jobs in design, programming, marketing and more",
-    "title": "Senior Full Stack MERN Developer",
-    "company": "Remote Leverage",
-    "tag": "Full-Stack Programming",
-    "url": "https://weworkremotely.com/remote-jobs/remote-leverage-senior-full-stack-mern-developer",
-    "published_at": "2025-12-24 16:58:02+00:00",
-    "skills": [
-      "express",
-      "https",
-      "mongodb",
-      "node.js",
-      "typescript"
-    ]
-  },
-  {
-    "source": "We Work Remotely: Remote jobs in design, programming, marketing and more",
-    "title": "Senior Full Stack Javascript Engineer (Remote, 4-day week)",
-    "company": "Stack Influence",
-    "tag": "Full-Stack Programming",
-    "url": "https://weworkremotely.com/remote-jobs/stack-influence-senior-full-stack-javascript-engineer-remote-4-day-week",
-    "published_at": "2025-12-24 15:42:44+00:00",
-    "skills": [
-      "azure",
-      "https",
-      "javascript",
-      "mongodb",
-      "postgresql",
-      "typescript"
-    ]
-  },
-  {
-    "source": "We Work Remotely: Remote jobs in design, programming, marketing and more",
-    "title": "Player-Coach Engineering Team Lead",
-    "company": "Silverfin",
-    "tag": "Full-Stack Programming",
-    "url": "https://weworkremotely.com/remote-jobs/silverfin-player-coach-engineering-team-lead-1",
-    "published_at": "2025-12-23 08:34:50+00:00",
-    "skills": [
-      "javascript",
-      "kubernetes",
-      "machine learning",
-      "monolith",
-      "postgresql",
-      "rails",
-      "redis",
-      "ruby"
-    ]
-  },
-  {
-    "source": "We Work Remotely: Remote jobs in design, programming, marketing and more",
-    "title": "Experienced Ruby Product Engineer",
-    "company": "Silverfin",
-    "tag": "Full-Stack Programming",
-    "url": "https://weworkremotely.com/remote-jobs/silverfin-experienced-ruby-product-engineer-1",
-    "published_at": "2025-12-23 08:30:21+00:00",
-    "skills": [
-      "https",
-      "javascript",
-      "ruby",
-      "vue"
-    ]
-  },
-  {
-    "source": "We Work Remotely: Remote jobs in design, programming, marketing and more",
     "title": "Senior Software Engineer",
     "company": "Stellar AI",
     "tag": "Full-Stack Programming",
     "url": "https://weworkremotely.com/remote-jobs/stellar-ai-senior-software-engineer",
     "published_at": "2025-10-21 19:36:26+00:00",
     "skills": [
+      "https"
+    ]
+  },
+  {
+    "source": "We Work Remotely: Remote jobs in design, programming, marketing and more",
+    "title": "Senior Software Engineer - Backend/Python - USA Only (100% Remote)",
+    "company": "Close",
+    "tag": "Back-End Programming",
+    "url": "https://weworkremotely.com/remote-jobs/close-senior-software-engineer-backend-python-usa-only-100-remote-1",
+    "published_at": "2025-07-23 14:31:54+00:00",
+    "skills": [
+      "elasticsearch",
+      "mongodb",
+      "postgresql",
+      "python",
+      "websockets"
+    ]
+  },
+  {
+    "source": "Remotive Remote Jobs RSS Feed",
+    "title": "iOS Developer",
+    "company": "nooro",
+    "tag": "Software Development",
+    "url": "https://remotive.com/remote-jobs/software-development/ios-developer-1956455",
+    "published_at": "2026-01-09 21:15:43+00:00",
+    "skills": [
+      "core data",
+      "dependency injection",
+      "git",
+      "github",
+      "https",
+      "ios",
+      "mvvm",
+      "restful",
+      "swift",
+      "swiftui"
+    ]
+  },
+  {
+    "source": "Remotive Remote Jobs RSS Feed",
+    "title": "Senior Frontend Engineer",
+    "company": "Vialma",
+    "tag": "Software Development",
+    "url": "https://remotive.com/remote-jobs/software-development/senior-frontend-engineer-2088531",
+    "published_at": "2026-01-08 21:29:04+00:00",
+    "skills": [
+      "ci/cd",
+      "combine",
+      "css",
+      "cv",
+      "github",
+      "graphql",
+      "next.js",
+      "node.js",
+      "restful",
+      "typescript"
+    ]
+  },
+  {
+    "source": "Remotive Remote Jobs RSS Feed",
+    "title": "Software Engineer C++ (Senior)",
+    "company": "Apexver",
+    "tag": "Software Development",
+    "url": "https://remotive.com/remote-jobs/software-development/software-engineer-c-senior-2069728",
+    "published_at": "2025-12-16 13:05:44+00:00",
+    "skills": [
+      "c",
+      "c++",
+      "concurrency",
+      "distributed systems",
+      "python"
+    ]
+  },
+  {
+    "source": "Remotive Remote Jobs RSS Feed",
+    "title": "Senior Independent AI Engineer / Architect",
+    "company": "A.Team",
+    "tag": "Software Development",
+    "url": "https://remotive.com/remote-jobs/software-development/senior-independent-ai-engineer-architect-1919266",
+    "published_at": "2025-12-16 10:15:57+00:00",
+    "skills": [
+      "cv",
+      "llms",
+      "nlp"
+    ]
+  },
+  {
+    "source": "Remotive Remote Jobs RSS Feed",
+    "title": "Senior Independent Software Developer",
+    "company": "A.Team",
+    "tag": "Software Development",
+    "url": "https://remotive.com/remote-jobs/software-development/senior-independent-software-developer-1919265",
+    "published_at": "2025-12-16 10:15:50+00:00",
+    "skills": [
+      "go",
       "https"
     ]
   }
