@@ -1,9 +1,9 @@
 .venv
 __pycache__
-sources.__pycache__
+sources/__pycache__
 *.pyc
 .env
-sources.variables.py
+sources/variables.py
 main_local.py
 storage.py
 test.ipynb
