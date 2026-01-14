@@ -1,5 +1,5 @@
 from sources.rss_feeds import RSSFeeds
-from storage import save_to_json
+from ipynb_checkpoints.storage import save_to_json
 
 def main():
 
