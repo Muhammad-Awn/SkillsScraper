@@ -1,24 +1,19 @@
 from sources.base import JobPosting
 from sources.rss_feeds import RSSFeeds
+from sources.variables import REDIS_URL, CACHE_TTL, RSS_URLS
 
 from slowapi import Limiter
 from slowapi.util import get_remote_address
+
+from urllib.parse import urlparse
+import ipaddress
+import socket
 
 from redis.asyncio import Redis
 import json
 import asyncio
 import hashlib
 import logging
-import os
-
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
-CACHE_TTL = int(os.getenv("CACHE_TTL", "600"))
-
-RSS_URLS = [
-    "https://weworkremotely.com/categories/remote-programming-jobs.rss",
-    "https://remotive.com/remote-jobs/feed",
-    "https://remoteok.com/remote-python-jobs.rss",
-]
 
 rss_source = RSSFeeds()
 
@@ -33,6 +28,27 @@ redis_client = Redis.from_url(
     decode_responses=True
 )
 
+# 🔍 Validate feed URLs to avoid SSRF
+def validate_feed_url(url: str) -> bool:
+    parsed = urlparse(url)
+
+    if parsed.scheme not in {"http", "https"}:
+        return False
+
+    try:
+        ip = socket.gethostbyname(parsed.hostname)
+        if ipaddress.ip_address(ip).is_private:
+            return False
+    except Exception:
+        return False
+
+    return True
+
+async def get_feed_urls():
+    feeds = await redis_client.smembers("rss:feeds")
+    return list(feeds) or RSS_URLS
+
+#################################################################
 RSS_SEMAPHORE = asyncio.Semaphore(5)
 
 async def fetch_rss_async(url: str):
@@ -45,7 +61,8 @@ def job_hash(job: JobPosting) -> str:
 
 async def aggregate_jobs() -> list[JobPosting]:
     # 🔄 Fetch all feeds concurrently
-    tasks = [fetch_rss_async(url) for url in RSS_URLS]
+    feed_urls = await get_feed_urls()
+    tasks = [fetch_rss_async(url) for url in feed_urls]
     results = await asyncio.gather(*tasks, return_exceptions=True)
 
     jobs = []
@@ -109,3 +126,4 @@ async def get_cached_jobs():
     # Absolute fallback (never return None)
     logging.warning("Cache unavailable, falling back to direct fetch")
     return await aggregate_jobs()
+

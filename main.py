@@ -1,23 +1,21 @@
-from fastapi import FastAPI, Query, Request
+from fastapi import FastAPI, Query, Request, HTTPException
 from fastapi.responses import Response
 
 from sources.base import JobPosting
-from sources.async_scripts import get_cached_jobs, redis_client, limiter
+from sources.async_scripts import get_cached_jobs, validate_feed_url, redis_client, limiter
+from sources.variables import RATE_LIMIT, UPLOAD_LIMIT, MAX_FEEDS
 
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 
+from prometheus_client import Counter, Histogram, generate_latest
 from contextlib import asynccontextmanager
 from typing import List, Optional
 
 import logging
-import os
-
-from prometheus_client import Counter, Histogram, generate_latest
 
 REQUEST_COUNT = Counter("http_requests_total", "Total HTTP requests")
 REQUEST_LATENCY = Histogram("http_request_duration_seconds", "Request latency")
-RATE_LIMIT = os.getenv("RATE_LIMIT", "10/minute")
 
 logging.basicConfig(
     level=logging.INFO,
@@ -58,6 +56,19 @@ async def metrics_middleware(request, call_next):
 @app.get("/metrics")
 def metrics():
     return Response(generate_latest(), media_type="text/plain")
+
+
+@limiter.limit(UPLOAD_LIMIT)
+@app.post("/feeds")
+async def add_feed(request: Request, url: str = Query(...)):
+    if await redis_client.scard("rss:feeds") >= MAX_FEEDS:
+        raise HTTPException(429, "Feed limit reached")
+
+    if not validate_feed_url(url):
+        raise HTTPException(400, "Invalid feed URL")
+
+    await redis_client.sadd("rss:feeds", url)
+    return {"status": "accepted"}
 
 
 @limiter.limit(RATE_LIMIT)
