@@ -4,4 +4,4 @@ sources/__pycache__
 *.pyc
 .env
 sources/variables.py
-.ipynb_checkpoints/
+.ipynb_checkpoints
